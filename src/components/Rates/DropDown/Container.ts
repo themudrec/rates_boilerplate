@@ -3,18 +3,15 @@ import { connect, ConnectedProps } from 'react-redux'
 import { IAppState } from 'store'
 import Component from './Component'
 import { bindActionCreators } from 'redux'
-import { fetchRatesByCurrency } from 'actions/common'
+import { setCurrency } from 'actions/common'
 
 const mapStateToProps = (state: IAppState) => ({
-  fetching: state.common.fetching,
   currency: state.common.currency,
-  dynamic: state.common.dynamic,
-
+  
 })
 
-
 const mapActionsToProps = (dispatch) => bindActionCreators({
-  fetchRatesByCurrency,
+  setCurrency,
 
 }, dispatch)
 
